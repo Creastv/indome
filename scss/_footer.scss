@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+footer .footer {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    background-color: $light;
+}
+
+footer .footer .footer-logo {
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+footer .footer .footer-logo img {
+    width: 100%;
+    max-width: 130px;
+}
+
+footer .footer .footer-txt {
+    width: calc(100% - 170px);
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+footer .footer .footer-txt p, footer .footer .footer-txt ul, footer .footer .footer-txt ol {
+    margin-bottom: 12px;
+}
+
+footer .footer .footer-menu .name {
+    font-family: termina, sans-serif;
+    margin-bottom: 10px;
+}
+
+footer .footer .footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer .footer-menu ul li {
+    padding: 5px 0;
+}
+
+footer .footer .footer-copyright, footer .footer .footer-copyright a {
+    color: rgba(0, 0, 0, 0.80);
+}
+
+footer .footer .footer-copyright {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-top: 20px;
+}

@@ -1,0 +1,31 @@
+@use "../variables" as *;
+
+.banner-txt-content {
+    padding-top: 190px;
+    padding-bottom: 180px;
+    background-color: $light;
+}
+
+.banner-txt-content .txt {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.banner-txt-content .txt ul.check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.banner-txt-content .txt ul.check-list li {
+    font-family: termina, sans-serif;
+    display: inline-block;
+    font-weight: 600;
+    padding-left: 28px;
+    margin-right: 32px;
+    background: url(../img/check.svg) center left / 22px no-repeat;
+}
+
+.banner-txt-content .txt ul.check-list li:last-child {
+    margin-right: 0;
+}

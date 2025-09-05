@@ -1,0 +1,25 @@
+.heading-content {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.heading-content .heading-title {
+    font-family: termina, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 0;
+}
+
+.heading-content.big .heading-title {
+    font-size: 40px;
+    line-height: 53px;
+}
+
+.heading-content .txt {
+    padding-left: 20%;
+}
+
+.heading-content .txt * {
+    margin-bottom: 0;
+}

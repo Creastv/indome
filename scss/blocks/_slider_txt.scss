@@ -1,0 +1,35 @@
+
+.slider-txt .item {
+    padding-bottom: 140px;
+}
+
+.slider-txt .item .img {
+    position: relative;
+}
+
+.slider-txt .item .img img {
+    display: block;
+    width: 100%;
+    max-width: 522px;
+    margin: 0 3% 0 auto;
+    border-radius: 28px;
+}
+
+.slider-txt .item .img .cover {
+    position: absolute;
+    right: -85px;
+    bottom: -125px;
+    width: 300px;
+}
+
+.slider-txt .item .txt {
+    width: 100%;
+    max-width: 443px;
+    margin: 0 auto;
+}
+
+.slider-txt .item .txt h1, .slider-txt .item .txt h2, .slider-txt .item .txt h3, .slider-txt .item .txt h4, .slider-txt .item .txt h5, .slider-txt .item .txt h6 {
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 500;
+}

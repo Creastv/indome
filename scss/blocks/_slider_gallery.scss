@@ -1,0 +1,31 @@
+.slider-gallery {
+    padding-bottom: 70px;
+}
+
+.slider-gallery .img {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.slider-gallery .img img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: transform 0.7s cubic-bezier(0, 0, 0.5, 1);
+}
+
+.slider-gallery .img:hover img {
+    transform: scale(1.04);
+}
+
+.slider-gallery .splide__arrow--prev {
+    left: -20px;
+}
+
+.slider-gallery .splide__arrow--next {
+    right: -20px;
+}

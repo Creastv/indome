@@ -1,0 +1,20 @@
+.slogan-content {
+    font-family: termina, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.48px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.slogan-content span {
+    display: inline-block;
+    width: 2px;
+    height: 17px;
+    margin: 0 24px;
+    background: url(../img/line.svg) center/contain no-repeat;
+    vertical-align: middle;
+}

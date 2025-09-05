@@ -1,0 +1,80 @@
+@use 'variables' as *;
+
+header.header-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+header .header-nav {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 7px 0;
+    background-color: #000;
+}
+
+header .header-nav, header .header-nav a, header .header-nav a:hover {
+    color: #ffffff;
+}
+
+header .header-nav * {
+    margin-bottom: 0;
+}
+
+header .header {
+    font-family: termina, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 14px 0;
+    background-color: #ffffff;
+    transition: transform .7s cubic-bezier(0, 0, 0.5, 1);
+}
+
+header.scroll .header {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .03);
+}
+
+header .header .header-logo {
+    width: 130px;
+}
+
+header .header .header-logo img {
+    display: block;
+    width: 100%;
+    max-width: 90px;
+    height: auto;
+}
+
+header .header .header-menu {
+    width: calc(100% - 130px);
+}
+
+header .header .header-menu {
+    width: calc(100% - 130px);
+}
+
+header .header .header-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .header .header-menu ul li {
+    display: block;
+    margin-right: 27px;
+}
+
+header .header .header-menu ul li:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.header-separator {
+    display: block;
+    width: 100%;
+    height: 145px;
+}

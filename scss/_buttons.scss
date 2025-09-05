@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+a.button, button.button, input.button {
+	font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    line-height: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 40px;
+    left: auto;
+    color: #ffffff;
+    background-color: $body;
+    border: 1px solid $body;
+    display: inline-block;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+	transition: .5s all;
+}
+
+a.button:hover, button.button:hover, input.button:hover, a.button.outline, button.button.outline, input.button.outline {
+    color: $body;
+    background-color: #ffffff;
+    border: 1px solid $body;
+}
+
+a.button.outline:hover, button.button.outline:hover, input.button.outline:hover, a.button.outline.active, button.button.outline.active, input.button.outline.active  {
+    color: #ffffff;
+    background-color: $body;
+    border: 1px solid $body;
+}

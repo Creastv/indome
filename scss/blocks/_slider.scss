@@ -1,0 +1,17 @@
+@use '../variables' as *;
+
+.slider-content {
+    overflow: hidden;
+}
+
+.slider-content .item {
+    margin: auto;
+}
+
+.slider-content img, .slider-content video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+    overflow: hidden;
+}

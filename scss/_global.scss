@@ -1,0 +1,158 @@
+@use "variables" as *;
+
+html,
+body {
+  color: $body;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  background: #ffffff;
+}
+
+html {
+  scroll-padding-top: 145px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  display: block;
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+
+a {
+  color: $body;
+  outline: none;
+  text-decoration: none;
+  transition: 0.5s all;
+}
+
+a:hover {
+  color: $body;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin-top: 0px;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+li {
+  padding-bottom: 0px;
+}
+
+p,
+.wp-block-image {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $body;
+  margin: 20px 0;
+}
+
+.container,
+.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.display-block {
+  display: block;
+}
+
+.menu-bar {
+  display: none;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-relative .container {
+  position: relative;
+  z-index: 5;
+}
+
+.icon-txt {
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 8px;
+}
+
+.page-wraper.page-wraper-padding {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+body.jw-modal-open::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  background-color: rgba(0, 0, 0, 0.48);
+	backdrop-filter: blur(5px);
+	z-index: 9998;
+}
+
+.jw-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  padding: 40px;
+  overflow: auto;
+}
+
+.jw-modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jw-modal-body {
+  width: 100%;
+  max-width: 850px;
+  padding: 35px 50px;
+	border-radius: 20px;
+  background: #ffffff;
+}
