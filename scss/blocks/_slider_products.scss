@@ -1,33 +1,33 @@
 .slider-products {
-    padding-bottom: 65px;
-    overflow: hidden;
+  padding-bottom: 65px;
+  overflow: hidden;
 }
 
 .slider-products .item .img {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .slider-products .item .img img {
-    display: block;
-    width: 100%;
-    height: 350px;
-    object-fit: contain;
-    transform: scale(1);
-    transition: transform 0.7s cubic-bezier(0, 0, 0.5, 1);
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0, 0, 0.5, 1);
 }
 
 .slider-products .item:hover .img img {
-    transform: scale(1.04);
+  transform: scale(1.04);
 }
 
 .slider-products .item .name {
-    font-family: termina, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 26px;
-    margin-bottom: 20px;
+  font-family: termina, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  margin-bottom: 20px;
 }
 
 .slider-products .splide__track {
-    overflow: inherit;
+  overflow: inherit;
 }

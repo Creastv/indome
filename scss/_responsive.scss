@@ -30,7 +30,7 @@
     width: 100%;
     height: 1px;
     background-color: $body;
-    transition: width .5s, background-color .5s, transform .8s ease;
+    transition: width 0.5s, background-color 0.5s, transform 0.8s ease;
     transform-origin: right;
   }
   header .header .header-logo .menu-bar span:last-child {
@@ -54,7 +54,7 @@
     width: 100%;
     height: 100%;
     background-color: #fff;
-    transition: .5s all;
+    transition: 0.5s all;
     text-align: center;
     z-index: 99;
   }
@@ -76,7 +76,7 @@
     padding-bottom: 80px;
   }
   .banner-content .img img {
-      margin-right: auto;
+    margin-right: auto;
   }
 }
 
@@ -94,6 +94,7 @@
   .heading-content .txt {
     padding-top: 25px;
     padding-left: 0;
+    text-align: left;
   }
   .banner-content .txt {
     padding-top: 40px;
@@ -127,13 +128,18 @@
   .container {
     max-width: $breakpoint-xs;
   }
-  .splide__arrow--prev, .slider-box .splide__arrow--prev, .slider-testimonial .splide__arrow--prev {
+  .splide__arrow--prev,
+  .slider-box .splide__arrow--prev,
+  .slider-testimonial .splide__arrow--prev {
     left: -15px;
   }
-  .splide__arrow--next, .slider-box .splide__arrow--next, .slider-testimonial .splide__arrow--next {
+  .splide__arrow--next,
+  .slider-box .splide__arrow--next,
+  .slider-testimonial .splide__arrow--next {
     right: -15px;
   }
-  footer .footer .footer-copyright, footer .footer .footer-copyright .text-right {
+  footer .footer .footer-copyright,
+  footer .footer .footer-copyright .text-right {
     text-align: center;
   }
 }
@@ -159,8 +165,8 @@
     transition: 0.5s all;
   }
   header.scroll .header-nav {
-      max-height: 0px;
-      padding: 0;
+    max-height: 0px;
+    padding: 0;
   }
   header .header .header-logo img {
     max-width: 80px;
@@ -172,15 +178,18 @@
   .header-separator {
     height: 155px;
   }
-  .heading-content.big .heading-title, .heading-content .heading-title {
+  .heading-content.big .heading-title,
+  .heading-content .heading-title {
     font-size: 32px;
     line-height: 38px;
   }
-  .heading-content, .slogan-content {
+  .heading-content,
+  .slogan-content {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .slider-content img, .slider-content video {
+  .slider-content img,
+  .slider-content video {
     aspect-ratio: 16/10;
   }
   .slider-products {
@@ -215,7 +224,8 @@
     margin-right: -20px;
     padding: 25px 20px 5px 20px;
   }
-  footer .footer .footer-logo, footer .footer .footer-txt {
+  footer .footer .footer-logo,
+  footer .footer .footer-txt {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
