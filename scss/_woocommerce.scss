@@ -477,7 +477,16 @@
 .single-product .single_add_to_cart_button {
   height: 42px;
 }
-
+form.cart {
+  display: flex;
+}
+form.cart button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  width: auto;
+}
 /* Drobne poprawki dla mobile */
 @media (max-width: 640px) {
   .single-product form.cart.variations_form {
@@ -600,4 +609,72 @@
 .products .add_to_cart_button,
 .products .product_type_variable {
   padding: 5px 20px !important;
+}
+
+.woocommerce-breadcrumb {
+  font-size: 14px;
+  color: #666;
+}
+.woocommerce-breadcrumb a {
+  color: var(--prime, #0073e6);
+  text-decoration: none;
+}
+.woocommerce-breadcrumb a:hover {
+  text-decoration: underline;
+}
+.woocommerce-breadcrumb .crumb-sep {
+  color: #bbb;
+  margin: 0 0.4em;
+}
+
+/* Kontener listy produktów: 2 kolumny (content + sidebar) */
+.woocommerce-post-type-archive,
+.post-type-archive-product,
+.tax-product_cat,
+.tax-product_tag {
+  /* dla pewności – użyjemy selektora bezpiecznego niżej */
+}
+
+/* Celujemy w główny wrapper WooCommerce na archiwach */
+body.post-type-archive-product .site,           /* ogólny wrapper motywu (dostosuj do swojego) */
+body.tax-product_cat .site,
+body.tax-product_tag .site {
+  /* bez zmian – zostaw jak jest, poniżej ustawimy grid na wewnętrznych */
+}
+
+/* Ustaw grid na sekcji listowania */
+body.post-type-archive-product .content-area,
+body.tax-product_cat .content-area,
+body.tax-product_tag .content-area,
+body.post-type-archive-product .woocommerce,
+body.tax-product_cat .woocommerce,
+body.tax-product_tag .woocommerce {
+  display: grid;
+  grid-template-columns: 1fr 320px; /* content | sidebar */
+  gap: 24px;
+}
+
+/* Główna kolumna z produktami */
+body.post-type-archive-product .site-main,
+body.tax-product_cat .site-main,
+body.tax-product_tag .site-main {
+  order: 1;
+}
+
+/* Nasz sidebar z hooka 'woocommerce_sidebar' */
+.shop-sidebar {
+  order: 2;
+}
+
+/* Mobile: jeden pod drugim */
+@media (max-width: 992px) {
+  body.post-type-archive-product .woocommerce,
+  body.tax-product_cat .woocommerce,
+  body.tax-product_tag .woocommerce {
+    grid-template-columns: 1fr;
+  }
+  .shop-sidebar {
+    order: 0; /* możesz zmienić kolejność: 0 => nad listą */
+    margin-bottom: 16px;
+  }
 }

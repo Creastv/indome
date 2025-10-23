@@ -1,5 +1,15 @@
 <?php
-
+add_action('widgets_init', function () {
+	register_sidebar([
+		'name'          => 'Sklep – Sidebar',
+		'id'            => 'shop-sidebar',
+		'description'   => 'Sidebar widoczny na listach produktów (sklep/kategorie/tagi).',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	]);
+});
 function menus()
 {
 	$locations = array(

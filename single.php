@@ -4,11 +4,14 @@ if (have_posts()): while (have_posts()): the_post();
 ?>
 		<div class="page-wraper">
 			<div class="container">
-				<?php if (!is_product()) : ?>
-					<div class="page-title-content">
+
+				<div class="page-title-content">
+					<?php if (!is_product()) : ?>
 						<h1 class="page-title"><?php the_title(); ?></h1>
-					</div>
-				<?php endif; ?>
+					<?php endif; ?>
+					<?php echo woocommerce_breadcrumb(); ?>
+				</div>
+
 				<div class="page-content">
 					<?php the_content(); ?>
 				</div>
