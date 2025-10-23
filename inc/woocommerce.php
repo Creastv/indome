@@ -1,18 +1,27 @@
 <?php
-
-
-// Wypisz sidebar tylko na listach produktów
-add_action('woocommerce_sidebar', function () {
-    if (is_shop() || is_product_category() || is_product_tag()) {
-        echo '<aside class="shop-sidebar" role="complementary" aria-label="Filtry sklepu">';
-        if (is_active_sidebar('shop-sidebar')) {
-            dynamic_sidebar('shop-sidebar');
-        } else {
-            echo '<p>Dodaj widgety do „Sklep – Sidebar” w Wygląd → Widgety.</p>';
+add_filter('template_include', function ($template) {
+    if (is_product_category() || is_product_tag()) {
+        $custom = get_stylesheet_directory() . '/shop-archive.php'; // w motywie potomnym
+        if (file_exists($custom)) {
+            return $custom;
         }
-        echo '</aside>';
     }
-}, 10);
+    return $template;
+}, 99);
+
+
+// Renderuj sidebar na stronach listowania produktów (Sklep/Kategorie/Tagi)
+function indome_render_shop_sidebar()
+{
+    if (is_product_category() || is_product_tag()) {
+        get_sidebar('shop'); // załaduje sidebar-shop.php
+    }
+}
+
+// Wpinamy przed listą produktów (działa w klasycznych szablonach)
+// add_action('woocommerce_before_shop_loop', 'indome_render_shop_sidebar', 5);
+
+
 // Przenieś tytuł produktu nad cenę i odczep domyślne miejsce
 add_action('init', function () {
     // nowe miejsce: tuż nad ceną (przed price na priorytecie 10)

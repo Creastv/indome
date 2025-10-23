@@ -3361,57 +3361,62 @@ form.cart button {
   margin: 0 0.4em;
 }
 
-/* Kontener listy produktów: 2 kolumny (content + sidebar) */
-.woocommerce-post-type-archive,
-.post-type-archive-product,
-.tax-product_cat,
-.tax-product_tag {
-  /* dla pewności – użyjemy selektora bezpiecznego niżej */
+.shop-wraper {
+  display: flex;
+  gap: 50px;
+}
+.shop-wraper .shop-sidebar {
+  width: 30%;
+}
+.shop-wraper .shop-sidebar .shop-sidebar-wraper {
+  background-color: var(--light);
+  padding: 20px;
+}
+.shop-wraper .shop-sidebar .wp-block-heading {
+  font-size: 21px;
+}
+.shop-wraper .shop-content {
+  width: 70%;
 }
 
-/* Celujemy w główny wrapper WooCommerce na archiwach */
-body.post-type-archive-product .site,
-body.tax-product_cat .site,
-body.tax-product_tag .site {
-  /* bez zmian – zostaw jak jest, poniżej ustawimy grid na wewnętrznych */
-}
-
-/* Ustaw grid na sekcji listowania */
-body.post-type-archive-product .content-area,
-body.tax-product_cat .content-area,
-body.tax-product_tag .content-area,
-body.post-type-archive-product .woocommerce,
-body.tax-product_cat .woocommerce,
-body.tax-product_tag .woocommerce {
-  display: grid;
-  grid-template-columns: 1fr 320px; /* content | sidebar */
-  gap: 24px;
-}
-
-/* Główna kolumna z produktami */
-body.post-type-archive-product .site-main,
-body.tax-product_cat .site-main,
-body.tax-product_tag .site-main {
-  order: 1;
-}
-
-/* Nasz sidebar z hooka 'woocommerce_sidebar' */
-.shop-sidebar {
-  order: 2;
-}
-
-/* Mobile: jeden pod drugim */
-@media (max-width: 992px) {
-  body.post-type-archive-product .woocommerce,
-  body.tax-product_cat .woocommerce,
-  body.tax-product_tag .woocommerce {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .shop-wraper {
+    flex-wrap: wrap;
+    gap: 0px;
   }
-  .shop-sidebar {
-    order: 0; /* możesz zmienić kolejność: 0 => nad listą */
-    margin-bottom: 16px;
+  .shop-wraper .shop-sidebar {
+    width: 100%;
+  }
+  .shop-wraper .shop-sidebar .shop-sidebar-wraper {
+    background: none;
+    padding: 0px;
+  }
+  .shop-wraper .shop-sidebar .wp-block-heading {
+    font-size: 21px;
+  }
+  .shop-wraper .shop-content {
+    width: 100%;
+  }
+  .wc-block-product-filters__open-overlay {
+    background-color: var(--light) !important;
+    text-align: center;
+    justify-content: center;
+    padding: 10px !important;
+    margin-bottom: 20px !important;
+    display: block;
   }
 }
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  margin: 0 2% 0 0;
+  width: 23.5%;
+}
+
+.woocommerce ul.products li.last,
+.woocommerce-page ul.products li.last {
+  margin-right: 0px !important;
+}
+
 @media (max-width: 1340px) {
   .container {
     max-width: 1240px;

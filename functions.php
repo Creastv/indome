@@ -3,13 +3,27 @@ add_action('widgets_init', function () {
 	register_sidebar([
 		'name'          => 'Sklep – Sidebar',
 		'id'            => 'shop-sidebar',
-		'description'   => 'Sidebar widoczny na listach produktów (sklep/kategorie/tagi).',
+		'description'   => 'Sidebar widoczny na listach produktów WooCommerce.',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	]);
 });
+// add_action('admin_enqueue_scripts', function ($hook) {
+// 	if (in_array($hook, ['widgets.php', 'customize.php'], true)) {
+// 		wp_dequeue_script('wp-editor');
+// 	}
+// }, 100);
+
+
+
+// NIE ładuj 'wp-editor' na widżetach / customizerze
+add_action('admin_enqueue_scripts', function ($hook) {
+	if (in_array($hook, ['widgets.php', 'customize.php'], true)) {
+		wp_dequeue_script('wp-editor');
+	}
+}, 100);
 function menus()
 {
 	$locations = array(
