@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, ::after, ::before {
   box-sizing: border-box;
   padding: 0;
@@ -1752,7 +1753,28 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1 {
+  display: block;
+  font-size: 41px;
+  line-height: normal;
+  font-weight: 400;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   display: block;
   font-size: 28px;
   line-height: 39px;
@@ -2167,7 +2189,9 @@ header .header-nav {
   background-color: #000;
 }
 
-header .header-nav, header .header-nav a, header .header-nav a:hover {
+header .header-nav,
+header .header-nav a,
+header .header-nav a:hover {
   color: #ffffff;
 }
 
@@ -2232,6 +2256,10 @@ header .header .header-menu ul li:last-child {
   height: 145px;
 }
 
+.header-separator--woocommerce {
+  height: 200px;
+}
+
 footer .footer {
   padding-top: 60px;
   padding-bottom: 20px;
@@ -2255,7 +2283,9 @@ footer .footer .footer-txt {
   margin-bottom: 20px;
 }
 
-footer .footer .footer-txt p, footer .footer .footer-txt ul, footer .footer .footer-txt ol {
+footer .footer .footer-txt p,
+footer .footer .footer-txt ul,
+footer .footer .footer-txt ol {
   margin-bottom: 12px;
 }
 
@@ -2273,7 +2303,8 @@ footer .footer .footer-menu ul li {
   padding: 5px 0;
 }
 
-footer .footer .footer-copyright, footer .footer .footer-copyright a {
+footer .footer .footer-copyright,
+footer .footer .footer-copyright a {
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -2282,6 +2313,15 @@ footer .footer .footer-copyright {
   font-weight: 400;
   line-height: 21px;
   padding-top: 20px;
+}
+
+.footer-separator {
+  display: block;
+  width: 100%;
+}
+
+.footer-separator--woocommerce {
+  height: 50px;
 }
 
 .slider-content {
@@ -2714,6 +2754,580 @@ a.button.outline:hover, button.button.outline:hover, input.button.outline:hover,
   color: #ffffff;
   background-color: #000000;
   border: 1px solid #000000;
+}
+
+:root {
+  --prime: #b1a845;
+  --black: #000;
+  --white: #fff;
+  --light: #f1efed;
+  --green: #28a745;
+  --blue: #0073e6;
+  --red: #dc3545;
+}
+
+/* Kolor głównych przycisków WooCommerce (Dodaj do koszyka, Kup teraz itp.) */
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce .button,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page input.button,
+.woocommerce-page #respond input#submit,
+.woocommerce-page .button,
+.wc-block-components-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  line-height: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  padding: 12px 20px;
+  font-weight: 700;
+  border-radius: 40px;
+  left: auto;
+  color: #fff;
+  background-color: var(--black) !important;
+  border: 1px solid var(--black);
+  display: inline-block;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  transition: 0.5s all;
+}
+
+/* Kolor po najechaniu */
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce .button:hover,
+.woocommerce-page a.button:hover,
+.woocommerce-page button.button:hover,
+.woocommerce-page input.button:hover,
+.woocommerce-page #respond input#submit:hover,
+.woocommerce-page .button:hover,
+.wc-block-components-button:hover {
+  color: var(--black) !important;
+  background-color: #fff !important;
+  border: 1px solid var(--black);
+}
+
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled],
+.woocommerce input.button:disabled,
+.woocommerce input.button:disabled[disabled] {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Cena produktu */
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price {
+  color: var(--prime) !important;
+}
+
+/* Sale badge (promocja) */
+.woocommerce span.onsale {
+  background-color: var(--prime);
+  color: #fff;
+}
+
+/* Checkboxy i zaznaczenia formularzy WooCommerce */
+.woocommerce input[type=checkbox]:checked,
+.woocommerce input[type=radio]:checked {
+  accent-color: var(--prime);
+}
+
+/* ================================
+   Styl komunikatów WooCommerce
+   ================================ */
+/* Styl ogólny – wspólny dla wszystkich typów wiadomości */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  border: none;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  background-color: var(--white); /* domyślny kolor (dla message/info) */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  outline: none !important;
+}
+
+/* ✅ Wiadomość pozytywna (np. "Produkt dodano do koszyka") */
+.woocommerce-message {
+  border: 1px solid var(--green); /* zielony */
+}
+
+/* ⚠️ Wiadomość informacyjna (np. "Nie masz zamówień") */
+.woocommerce-info {
+  border: 1px solid var(--blue); /* niebieski */
+}
+
+/* ❌ Wiadomość błędu (np. "Niepoprawny adres e-mail") */
+.woocommerce-error {
+  border: 1px solid var(--blue); /* czerwony */
+}
+
+/* Linki w komunikatach (np. „Zobacz koszyk”) */
+.woocommerce-message a,
+.woocommerce-info a,
+.woocommerce-error a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.woocommerce-message a:hover,
+.woocommerce-info a:hover,
+.woocommerce-error a:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+/* ================================
+   Styl etykiety "On Sale" WooCommerce
+   ================================ */
+.woocommerce span.onsale {
+  background-color: var(--green); /* 🔴 kolor tła (np. czerwony) */
+  color: #fff; /* kolor tekstu */
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 50px; /* okrągły kształt */
+  top: 10px;
+  left: 10px;
+  right: auto;
+  min-height: unset;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   Styl zakładek WooCommerce
+   ================================ */
+/* Kontener zakładek */
+.woocommerce div.product .woocommerce-tabs {
+  margin-top: 40px;
+}
+
+/* Pasek zakładek */
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  border-bottom: 2px solid #eee;
+  margin: 0 0 20px;
+}
+
+/* Pojedyncza zakładka */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  margin: 0 20px 0 0;
+  padding: 0;
+  border: none;
+}
+
+/* Link w zakładce */
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: transparent;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+/* Zakładka aktywna */
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+  color: var(--prime); /* 🔵 Twój główny kolor */
+  border-bottom-color: var(--prime);
+}
+
+/* Hover efekt */
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+  color: var(--prime);
+}
+
+/* Zawartość zakładek */
+.woocommerce div.product .woocommerce-tabs .panel {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* --- 1) Ustaw nawigację poziomo, nad treścią --- */
+.woocommerce-account .woocommerce-MyAccount-navigation {
+  float: none; /* wyłącz układ kolumnowy motywu */
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+  float: none; /* treść pod spodem na pełną szerokość */
+  width: 100%;
+}
+
+/* --- 2) Pasek zakładek poziomy (horyzontalny) --- */
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+  display: flex;
+  flex-wrap: wrap; /* łamie się w kolejne wiersze gdy mało miejsca */
+  gap: 8px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* --- 3) Linki w zakładkach --- */
+.woocommerce-account .woocommerce-MyAccount-navigation li a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* hover */
+.woocommerce-account .woocommerce-MyAccount-navigation li a:hover {
+  color: var(--prime); /* podmień na kolor marki */
+  border-bottom-color: #cfe6ff; /* delikatne podkreślenie na hover */
+}
+
+/* aktywna zakładka */
+.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a {
+  color: var(--prime); /* kolor aktywnej */
+  border-bottom-color: var(--prime); /* podkreślenie aktywnej */
+  background: #f7fbff; /* subtelne tło (opcjonalnie) */
+}
+
+/* --- 4) Mobile – przewijanie w poziomie gdy dużo pozycji --- */
+@media (max-width: 640px) {
+  .woocommerce-account .woocommerce-MyAccount-navigation ul {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap; /* w jednym wierszu */
+    gap: 0;
+  }
+  .woocommerce-account .woocommerce-MyAccount-navigation li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .woocommerce-account .woocommerce-MyAccount-navigation li a {
+    border-radius: 0; /* bardziej „paskowy” wygląd na mobile */
+    padding: 10px 12px;
+  }
+}
+/* ================================
+   WooCommerce: atrakcyjna tabela atrybutów
+   ================================ */
+.woocommerce table.shop_attributes {
+  width: 100%;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden; /* zaokrąglenie na całej tabeli */
+  border-collapse: separate; /* pozwala na border-radius */
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Wiersze – delikatna zebra */
+.woocommerce table.shop_attributes tr:nth-child(odd) th,
+.woocommerce table.shop_attributes tr:nth-child(odd) td {
+  background: #fafafa;
+}
+
+/* Komórki nagłówków (etykiety) */
+.woocommerce table.shop_attributes th {
+  width: 32%;
+  padding: 14px 16px;
+  color: #333;
+  font-weight: 700;
+  text-transform: none; /* zmień na uppercase jeśli wolisz */
+  background: #f5f7fb; /* subtelne tło dla kolumny etykiet */
+  border-right: 1px solid #eee;
+}
+
+/* Komórki wartości */
+.woocommerce table.shop_attributes td {
+  padding: 14px 16px;
+  color: #444;
+}
+
+/* Usuń domyślne kursywy/odstępy Woo */
+.woocommerce table.shop_attributes td p {
+  margin: 0;
+  font-style: normal;
+}
+
+/* Linki/wartości jako "pills" (gdy atrybut ma wiele wartości) */
+.woocommerce table.shop_attributes td a,
+.woocommerce table.shop_attributes td span,
+.woocommerce table.shop_attributes td .wc-item-attribute {
+  display: inline-block;
+  margin: 2px 6px 2px 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: #0b57d0;
+  text-decoration: none;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Jeśli wolisz bez pills – zakomentuj powyższy blok i odkomentuj ten:
+  .woocommerce table.shop_attributes td a,
+  .woocommerce table.shop_attributes td span {
+    text-decoration: none;
+    border-bottom: 1px dotted #cbd5e1;
+    padding-bottom: 2px;
+  }
+  */
+/* Cienkie separatory między wierszami */
+.woocommerce table.shop_attributes tr + tr th,
+.woocommerce table.shop_attributes tr + tr td {
+  border-top: 1px solid #eee;
+}
+
+/* Ikonki dla popularnych atrybutów (wg klas Woo: .attribute_{slug}) */
+.woocommerce table.shop_attributes tr.attribute_pa_color th::before {
+  content: "🎨 ";
+}
+
+.woocommerce table.shop_attributes tr.attribute_pa_size th::before {
+  content: "📏 ";
+}
+
+.woocommerce table.shop_attributes tr.attribute_dimensions th::before {
+  content: "📦 ";
+}
+
+.woocommerce table.shop_attributes tr.attribute_weight th::before {
+  content: "⚖️ ";
+}
+
+.woocommerce table.shop_attributes tr.attribute_material th::before {
+  content: "🧵 ";
+}
+
+.woocommerce table.shop_attributes tr.attribute_brand th::before {
+  content: "🏷️ ";
+}
+
+/* Responsywność – kolumny pod sobą na mobile */
+@media (max-width: 640px) {
+  .woocommerce table.shop_attributes thead {
+    display: none;
+  }
+  .woocommerce table.shop_attributes tr {
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+  .woocommerce table.shop_attributes th,
+  .woocommerce table.shop_attributes td {
+    display: block;
+    width: 100%;
+    border: none !important;
+  }
+  .woocommerce table.shop_attributes th {
+    background: transparent;
+    padding: 12px 16px 4px;
+    color: #666;
+    font-weight: 700;
+  }
+  .woocommerce table.shop_attributes td {
+    padding: 0 16px 12px;
+  }
+}
+/* ================================
+   Układ przycisku "Dodaj do koszyka" + wariacji w jednej linii
+   ================================ */
+.single-product form.cart.variations_form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px; /* odstęp między elementami */
+}
+
+/* Kontener z polami wyboru wariacji */
+.single-product .variations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+/* Etykiety i selecty wariacji */
+.single-product .variations td.label {
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.single-product .variations td.value {
+  margin-right: 15px;
+}
+
+/* Sam przycisk Dodaj do koszyka */
+.single-product .single_variation_wrap .woocommerce-variation-add-to-cart,
+.single-product .single_variation_wrap .variations_button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+/* Przyciski i ilość w jednej linii */
+.single-product .quantity,
+.single-product .single_add_to_cart_button {
+  margin: 0;
+}
+
+/* Jeśli chcesz, żeby select i przycisk miały taką samą wysokość */
+.single-product .variations select,
+.single-product .single_add_to_cart_button {
+  height: 42px;
+}
+
+/* Drobne poprawki dla mobile */
+@media (max-width: 640px) {
+  .single-product form.cart.variations_form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .single-product .variations,
+  .single-product .single_variation_wrap .woocommerce-variation-add-to-cart {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* ================================
+   RESET domyślnych styli zakładek WooCommerce (produkt)
+   usuwa obramowania, tła, pseudo-elementy, cienie itp.
+   ================================ */
+.woocommerce div.product .woocommerce-tabs ul.tabs,
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Woo dodaje pseudo-elementy do linii/zaokrągleń – wyłącz je */
+.woocommerce div.product .woocommerce-tabs ul.tabs::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs::after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Czasem motywy doklejają marginesy/padding – wyczyść */
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Indywidualne LI – usuń rezydualne spacingi i zaokrąglenia */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Linki w zakładkach – bazowy, czysty stan */
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  background: transparent !important;
+  text-decoration: none;
+}
+
+/* ================================
+      TWÓJ minimalistyczny styl
+      (możesz zostawić jak jest lub dopasować)
+      ================================ */
+/* Kontener zakładek */
+.woocommerce div.product .woocommerce-tabs {
+  margin-top: 40px;
+}
+
+/* Pasek zakładek */
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  border-bottom: 2px solid #eee;
+  margin: 0 0 20px;
+}
+
+/* Pojedyncza zakładka */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  margin: 0 20px 0 0;
+  padding: 0;
+}
+
+/* Link w zakładce */
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: transparent;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+/* Zakładka aktywna */
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+  color: var(--prime);
+  border-bottom-color: var(--prime);
+}
+
+/* Hover efekt */
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+  color: var(--prime);
+}
+
+/* Zawartość zakładek */
+.woocommerce div.product .woocommerce-tabs .panel {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.woocommerce-loop-product__title {
+  line-height: normal;
+}
+
+.woocommerce-loop-product__link .price .amount {
+  font-size: 1rem;
+}
+
+.products .add_to_cart_button,
+.products .product_type_variable {
+  padding: 5px 20px !important;
 }
 
 @media (max-width: 1340px) {

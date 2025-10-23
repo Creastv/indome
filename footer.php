@@ -1,24 +1,24 @@
 		<?php
-			$custom_logo_id = get_theme_mod('custom_logo');
-			$footer_txt = get_field('footer_txt', 'option')
+		$custom_logo_id = get_theme_mod('custom_logo');
+		$footer_txt = get_field('footer_txt', 'option')
 		?>
+		<div class="footer-separator <?php echo is_woocommerce() ? 'footer-separator--woocommerce' : false; ?>"></div>
 		<footer class="fade-in">
 			<div class="footer">
 				<div class="container">
 					<div class="grid-2_md-1">
 						<div class="col">
 							<div class="grid">
-								<?php if(is_numeric($custom_logo_id)): ?>
-								<div class="footer-logo">
-									<p><?php echo wp_get_attachment_image($custom_logo_id, 'medium'); ?></p>
-								</div>
+								<?php if (is_numeric($custom_logo_id)): ?>
+									<div class="footer-logo">
+										<p><?php echo wp_get_attachment_image($custom_logo_id, 'medium'); ?></p>
+									</div>
 								<?php endif; ?>
 								<div class="footer-txt">
 									<?php
-										if(!empty($footer_txt))
-										{
-											echo apply_filters('the_content', $footer_txt);
-										}
+									if (!empty($footer_txt)) {
+										echo apply_filters('the_content', $footer_txt);
+									}
 									?>
 								</div>
 							</div>
@@ -28,19 +28,17 @@
 								<div class="col footer-menu">
 									<p class="name"><?php echo wp_get_nav_menu_name('footer_menu_1'); ?></p>
 									<?php
-										if(has_nav_menu('footer_menu_1'))
-										{
-											wp_nav_menu(array('theme_location' => 'footer_menu_1', 'depth' => 1));
-										}
+									if (has_nav_menu('footer_menu_1')) {
+										wp_nav_menu(array('theme_location' => 'footer_menu_1', 'depth' => 1));
+									}
 									?>
 								</div>
 								<div class="col footer-menu">
 									<p class="name"><?php echo wp_get_nav_menu_name('footer_menu_2'); ?></p>
 									<?php
-										if(has_nav_menu('footer_menu_2'))
-										{
-											wp_nav_menu(array('theme_location' => 'footer_menu_2', 'depth' => 1));
-										}
+									if (has_nav_menu('footer_menu_2')) {
+										wp_nav_menu(array('theme_location' => 'footer_menu_2', 'depth' => 1));
+									}
 									?>
 								</div>
 							</div>
@@ -60,5 +58,6 @@
 			</div>
 		</footer>
 		<?php wp_footer(); ?>
-	</body>
-</html>
+		</body>
+
+		</html>
